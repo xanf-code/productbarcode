@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:barcode/ModelProduct.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -15,10 +14,10 @@ class _DetailsPageState extends State<DetailsPage> {
   Product product;
 
   Future<Product> getProduct()async{
-    await http.get("http://127.0.0.1/productapi/getProduct.php?code=${widget.code}")
+    await http.get("http://127.0.0.1/productapi/getProduct.php?code=${widget.code}",headers: {"Accept": "application/json"})
         .then((response){
           if(jsonDecode(response.body)!=null){
-            product=Product.fromJson(jsonDecode(response.body));
+            product = Product.fromJson(jsonDecode(response.body));
           }
     });
     return product;
@@ -27,6 +26,7 @@ class _DetailsPageState extends State<DetailsPage> {
   @override
   void initState() {
     getProduct();
+    print(product);
     super.initState();
   }
   @override
@@ -34,16 +34,16 @@ class _DetailsPageState extends State<DetailsPage> {
     return Scaffold(
       backgroundColor: Color(0xFF121212),
       body: product==null
-          ? Center(child: Text('VALUE: ${widget.code}',style: TextStyle(color: Colors.white),)) :
+          ? Center(child: Text("Value : ${widget.code}",style: TextStyle(color: Colors.white),),) :
       Container(
           child: Column(
             children: [
               Text("CODE: ${product.code}",style: TextStyle(fontSize: 20,color: Colors.white),),
-              Text("CODE: ${product.id}",style: TextStyle(fontSize: 20,color: Colors.white),),
-              Text("CODE: ${product.productname}",style: TextStyle(fontSize: 20,color: Colors.white),),
-              Text("CODE: ${product.description}",style: TextStyle(fontSize: 20,color: Colors.white),),
-              Text("CODE: ${product.cost}",style: TextStyle(fontSize: 20,color: Colors.white),),
-              Text("CODE: ${product.stock}",style: TextStyle(fontSize: 20,color: Colors.white),)
+              Text("ID: ${product.id}",style: TextStyle(fontSize: 20,color: Colors.white),),
+              Text("NAME: ${product.productname}",style: TextStyle(fontSize: 20,color: Colors.white),),
+              Text("DESCRIPTION: ${product.description}",style: TextStyle(fontSize: 20,color: Colors.white),),
+              Text("COST: ${product.cost}",style: TextStyle(fontSize: 20,color: Colors.white),),
+              Text("STOCK: ${product.stock}",style: TextStyle(fontSize: 20,color: Colors.white),)
             ],
           ),
       ),

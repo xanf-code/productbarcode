@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   Future<void> scanBarcodeNormal() async {
     try {
       await FlutterBarcodeScanner.scanBarcode(
-          "#ff6666", "Cancel", true, ScanMode.BARCODE).then((String code){
+          "#ff6666", "Cancel", true, ScanMode.DEFAULT).then((String code){
             Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailsPage(code)));
       });
     } on PlatformException {
