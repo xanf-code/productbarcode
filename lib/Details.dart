@@ -38,12 +38,12 @@ class _DetailsPageState extends State<DetailsPage> {
       Container(
           child: Column(
             children: [
-              Text("CODE: ${product.code}",style: TextStyle(fontSize: 20),),
-              Text("CODE: ${product.id}",style: TextStyle(fontSize: 20),),
-              Text("CODE: ${product.productname}",style: TextStyle(fontSize: 20),),
-              Text("CODE: ${product.description}",style: TextStyle(fontSize: 20),),
-              Text("CODE: ${product.cost}",style: TextStyle(fontSize: 20),),
-              Text("CODE: ${product.stock}",style: TextStyle(fontSize: 20),)
+              Text("CODE: ${product.code}",style: TextStyle(fontSize: 20,color: Colors.white),),
+              Text("CODE: ${product.id}",style: TextStyle(fontSize: 20,color: Colors.white),),
+              Text("CODE: ${product.productname}",style: TextStyle(fontSize: 20,color: Colors.white),),
+              Text("CODE: ${product.description}",style: TextStyle(fontSize: 20,color: Colors.white),),
+              Text("CODE: ${product.cost}",style: TextStyle(fontSize: 20,color: Colors.white),),
+              Text("CODE: ${product.stock}",style: TextStyle(fontSize: 20,color: Colors.white),)
             ],
           ),
       ),
