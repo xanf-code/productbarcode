@@ -59,6 +59,10 @@ The H001 at the end of http://localhost/productapi/getProduct.php?code=H001 is t
 
 You can create custom barcodes using [InkScape](https://inkscape.org/) and pass the code into the barcode as UTF-8 format.
 
-#### Link to the backend files
+### Link to the backend files
 
 [Backend Files](https://github.com/xanf-code/BackendProdCode)
+
+### LICENCE
+
+Released under the [MIT](./LICENSE) License.<br>
