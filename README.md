@@ -10,14 +10,14 @@ Let's start off by storing a set of products to the backend SQL Database, and ho
 
 ### Connection.php
 
-![connphp](https://github.com/xanf-code/productbarcode/blob/master/AppShots/conn.PNG)
+![connphp](https://github.com/xanf-code/productbarcode/blob/master/AppShots/conn.png)
 
 Above is the block of code which will be used to establish the connection with the localhost server.
 As mentioned above the callback function here is the "$code", the callback code is appended to the header of the url when the barcode is scanned, and the matching row in the SQL table is returned as a list tile.
 
 ### getProduct.php
 
-![productsphp](https://github.com/xanf-code/productbarcode/blob/master/AppShots/getProducts.PNG)
+![productsphp](https://github.com/xanf-code/productbarcode/blob/master/AppShots/getProducts.png)
 
 As you can above the callback function is $code and we query for the keyword code from the table Producttable(in my case), the $YOUR_TABLE_NAME must be replaced with your table name.
 
