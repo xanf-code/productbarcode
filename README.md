@@ -9,35 +9,16 @@ A minimal fast barcode product check out system built using Flutter for frontend
 Let's start off by storing a set of products to the backend SQL Database, and host it on a local server. Now we have a JSON list of products which can be parsed using appropriate header callback function and flutter HTTP package.
 
 ### Connection.php
-```
-<?php
-	$conn = new mysqli("$localhostIP","root","","products");
 
-	if ($conn->connect_error) {
-		die();
-	}
-?>
-```
+![connphp](https://github.com/xanf-code/productbarcode/blob/master/AppShots/conn.PNG)
+
 Above is the block of code which will be used to establish the connection with the localhost server.
 As mentioned above the callback function here is the "$code", the callback code is appended to the header of the url when the barcode is scanned, and the matching row in the SQL table is returned as a list tile.
 
 ### getProduct.php
-```
-<?php
-	include 'conn.php';
 
-	$code = $_GET['code'];
+![productsphp](https://github.com/xanf-code/productbarcode/blob/master/AppShots/getProducts.PNG)
 
-	$sql = $conn->query("SELECT * FROM $YOUR_TABLE_NAME WHERE code = '$code'");
-
-	$data = $sql->fetch_assoc();
-
-	echo json_encode($data);
-
-	mysqli_close($conn);
-
-?>
-```
 As you can above the callback function is $code and we query for the keyword code from the table Producttable(in my case), the $YOUR_TABLE_NAME must be replaced with your table name.
 
 ### Checklist
