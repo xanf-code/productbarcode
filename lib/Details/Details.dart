@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:barcode/ModelProduct.dart';
+import 'package:barcode/Model/ModelProduct.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 

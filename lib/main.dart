@@ -1,4 +1,4 @@
-import 'package:barcode/Homepage.dart';
+import 'package:barcode/Home/Homepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
